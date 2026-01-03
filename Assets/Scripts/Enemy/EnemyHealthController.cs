@@ -2,6 +2,8 @@
 
 public class EnemyHealthManager : MonoBehaviour
 {
+    public bool damageJump = true;
+
     public float HEALTH;
     public float MAXHEALTH;
     public Transform healthSlider;
@@ -12,18 +14,18 @@ public class EnemyHealthManager : MonoBehaviour
     public float chunkDepth = 0.05f;
     public float chunkLifetime = 5f;
 
-    void Start()
+    public virtual void Start()
     {
         HEALTH = MAXHEALTH;
     }
 
-    void Update()
+    public virtual void Update()
     {
         healthSlider.localPosition = new Vector3((100 - HEALTH) / 100 * -0.575f, healthSlider.localPosition.y, healthSlider.localPosition.z);
         healthSlider.localScale = new Vector3(1.15f * HEALTH / MAXHEALTH, healthSlider.localScale.y, healthSlider.localScale.z);
     }
 
-    public void GetDamage(float damage)
+    public virtual void GetDamage(float damage)
     {
         float oldHealth = HEALTH;
 

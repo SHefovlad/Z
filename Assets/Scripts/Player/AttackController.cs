@@ -43,8 +43,8 @@ public class AttackController : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Enemy enemy = other.GetComponent<Enemy>();
-            enemy.healthManager.GetDamage(damage);
-            if (enemy.healthManager.HEALTH > 0) enemy.velocity.y += 11;
+            enemy.healthManager?.GetDamage(damage);
+            if (enemy.healthManager?.HEALTH > 0 && enemy.healthManager?.damageJump == true) enemy.velocity.y += 11;
             //particles.Play();
         }
         /*

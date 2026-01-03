@@ -7,9 +7,10 @@ public class GrassSpawner : MonoBehaviour
     public Material grassMaterial;
     public float bladeHeightMin = 0.5f;
     public float bladeHeightMax = 1.5f;
-    
+    public GameObject cube;
     void Start()
     {
+        Destroy(cube);
         for (int i = 0; i < count; i++)
         {
             float offsetX = Random.Range(-halfSize, halfSize);

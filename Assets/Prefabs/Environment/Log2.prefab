@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
+  outlines:
+  - {fileID: 4975386181182424691}
   seatPlace: {fileID: 4157834031227112037}
 --- !u!65 &5762715517241734953
 BoxCollider:
@@ -320,6 +322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
+  outlines:
+  - {fileID: 337953344740437898}
   seatPlace: {fileID: 692601204599849432}
 --- !u!65 &7224884598526019006
 BoxCollider:

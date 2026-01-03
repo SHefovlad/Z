@@ -40,8 +40,7 @@ public class InteractableFinder : MonoBehaviour
             // Отключаем Outline у старого
             if (currentInteractable != null)
             {
-                var oldOutline = currentInteractable.GetComponent<Outline>();
-                if (oldOutline != null) oldOutline.enabled = false;
+                currentInteractable.GetComponent<Interactable>().IsClosest = false;
             }
 
             currentInteractable = newInteractable;
@@ -49,8 +48,7 @@ public class InteractableFinder : MonoBehaviour
             // Включаем Outline у нового
             if (currentInteractable != null)
             {
-                var newOutline = currentInteractable.GetComponent<Outline>();
-                if (newOutline != null) newOutline.enabled = true;
+                currentInteractable.GetComponent<Interactable>().IsClosest = true;
             }
         }
         if (Input.GetButtonDown("Interaction") && currentInteractable != null)

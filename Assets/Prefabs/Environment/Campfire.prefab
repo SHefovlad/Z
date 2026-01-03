@@ -276,6 +276,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Campfire
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfb2384d1cab5f6459683087c5d3c1f7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfb2384d1cab5f6459683087c5d3c1f7, type: 3}
+      propertyPath: m_TagString
+      value: Campfire
+      objectReference: {fileID: 0}
     - target: {fileID: 1442450553484104045, guid: bfb2384d1cab5f6459683087c5d3c1f7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -314,6 +322,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6241367534388728635}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bfb2384d1cab5f6459683087c5d3c1f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2187806582903650994}
     - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: bfb2384d1cab5f6459683087c5d3c1f7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4120485640632644483}
@@ -323,6 +334,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bfb2384d1cab5f6459683087c5d3c1f7, type: 3}
   m_PrefabInstance: {fileID: 4980511892365097534}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5323040338746181487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bfb2384d1cab5f6459683087c5d3c1f7, type: 3}
+  m_PrefabInstance: {fileID: 4980511892365097534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2187806582903650994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5323040338746181487}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.84826136, z: 1}
+  m_Center: {x: 0, y: 2.4818537, z: 0}
 --- !u!1 &5661647749452761178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: bfb2384d1cab5f6459683087c5d3c1f7, type: 3}

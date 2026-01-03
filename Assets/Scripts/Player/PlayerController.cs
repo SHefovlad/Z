@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask roofMask;
 
     public Transform modelTransform;
+    public Transform hatPlaceTransform;
     public float rotationSpeed = 10f;
 
     // Перекат
@@ -50,6 +51,18 @@ public class PlayerController : MonoBehaviour
     public bool isSeat = false;
 
     public float stun;
+
+    Hat _currentHat = null;
+    public Hat CurrentHat
+    {
+        get { return _currentHat; }
+        set
+        {
+            foreach (Transform child in hatPlaceTransform) Destroy(child.gameObject);
+            Instantiate(value.prefab, hatPlaceTransform);
+            _currentHat = value;
+        }
+    }
 
     void Start()
     {
@@ -101,6 +114,7 @@ public class PlayerController : MonoBehaviour
             }
 
             Vector3 move = transform.right * x + transform.forward * z;
+            move = move.normalized;
             if (move != Vector3.zero && Physics.CheckSphere(groundCheck.position, 1, groundMask))
             {
                 onTree = false;
@@ -130,7 +144,6 @@ public class PlayerController : MonoBehaviour
 
                     flatMove = new Vector3(move.x, 0, move.z);
                 }
-
 
 
                 // Если задана цель, вращаемся на неё
@@ -182,6 +195,7 @@ public class PlayerController : MonoBehaviour
     {
         isRolling = true;
         rollDirection = direction;
+        modelTransform.rotation = Quaternion.LookRotation(direction);
         rollTimer = rollDuration;
         totalRollDuration = rollDuration;
     }

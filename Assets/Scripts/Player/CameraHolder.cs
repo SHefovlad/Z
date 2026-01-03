@@ -24,7 +24,7 @@ public class CameraHolder : MonoBehaviour
             {
                 if (target.GetComponent<Enemy>() != null)
                 {
-                    if (target.GetComponent<Enemy>().healthManager.HEALTH <= 0)
+                    if (target.GetComponent<Enemy>().healthManager?.HEALTH <= 0)
                     {
                         targeting = false;
                         target = null;

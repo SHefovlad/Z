@@ -67,7 +67,7 @@ public abstract class Enemy : MonoBehaviour
                 o.enabled = false;
             }
         }
-        if (healthManager.HEALTH <= 0) OnDied();
+        if (healthManager?.HEALTH <= 0) OnDied();
         else OnLive();
 
         velocity.y += gravity * Time.deltaTime;
@@ -75,14 +75,14 @@ public abstract class Enemy : MonoBehaviour
     }
     public virtual void OnDied()
     {
-        animator.SetBool("isDead", true);
+        animator?.SetBool("isDead", true);
         deadTimer += Time.deltaTime;
         if (targetPoint != null) Destroy(targetPoint.gameObject);
         if (deadTimer >= deadTime)
         {
             if (!vbSwit)
             {
-                healthManager.healthGO.SetActive(false);
+                healthManager?.healthGO.SetActive(false);
                 vbSwit = true;
                 foreach (Outline o in outlines)
                 {
@@ -105,7 +105,7 @@ public abstract class Enemy : MonoBehaviour
 
             if (Random.value < 0.65f && !targetIsPlayer && targetPoint == null)
             {
-                animator.Play("Walk");
+                animator?.Play("Walk");
                 targetPoint = new GameObject("enemyTarget").transform;
                 targetPoint.position = new Vector3(transform.position.x + (Random.value * 8 - 4), transform.position.y, transform.position.z + (Random.value * 8 - 4));
             }

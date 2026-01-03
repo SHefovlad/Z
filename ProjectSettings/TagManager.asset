@@ -9,6 +9,7 @@ TagManager:
   - Gun
   - Powersnake
   - Enemy
+  - Campfire
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Player
   - Technical
   - Interactable
-  - 
-  - 
+  - Environment
+  - Campfire
   - 
   - 
   - 
