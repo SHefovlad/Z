@@ -25,6 +25,8 @@ public class EnemyFinder : MonoBehaviour
         {
             if (detectTags.Count > 0 && !detectTags.Contains(col.tag)) continue;
 
+            if (col.GetComponent<Enemy>()?.healthManager?.HEALTH <= 0) continue;
+
             float dist = Vector3.Distance(transform.position, col.transform.position);
             if (dist < closestDist)
             {

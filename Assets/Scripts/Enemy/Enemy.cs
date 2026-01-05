@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(CharacterController))]
 public abstract class Enemy : MonoBehaviour
 {
+    public EnemyType enemyType;
+
     public Transform targetPoint;
     public float speed = 3f;
     public float nowSpeed;
@@ -37,6 +40,10 @@ public abstract class Enemy : MonoBehaviour
     public CameraHolder cameraHolder;
     public List<Outline> outlines;
     public bool vbSwit = false;
+
+    public UnityEvent onDeath;
+    public UnityEvent onVoxelling;
+    public bool odi = false;
 
     public virtual void Start()
     {
@@ -75,7 +82,9 @@ public abstract class Enemy : MonoBehaviour
     }
     public virtual void OnDied()
     {
+        if (!odi) { onDeath?.Invoke(); odi = true; }
         animator?.SetBool("isDead", true);
+        controller.enabled = false;
         deadTimer += Time.deltaTime;
         if (targetPoint != null) Destroy(targetPoint.gameObject);
         if (deadTimer >= deadTime)
@@ -84,6 +93,7 @@ public abstract class Enemy : MonoBehaviour
             {
                 healthManager?.healthGO.SetActive(false);
                 vbSwit = true;
+                onVoxelling?.Invoke();
                 foreach (Outline o in outlines)
                 {
                     VoxelBreaker vb = o.gameObject.AddComponent<VoxelBreaker>();
@@ -111,4 +121,12 @@ public abstract class Enemy : MonoBehaviour
             }
         }
     }
+}
+
+public enum EnemyType
+{
+    Piramid,
+    Hammur,
+    Gun,
+    Powersnake
 }

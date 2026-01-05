@@ -72,6 +72,7 @@ public class PiramidController : Enemy
     {
         if (!targetIsPlayer)
         {
+            if (healthManager.HEALTH <= 0) return;
             if (targetPoint != null) Destroy(targetPoint.gameObject);
             animator.SetBool("isRunning", true);
             animator.SetBool("isStopping", false);

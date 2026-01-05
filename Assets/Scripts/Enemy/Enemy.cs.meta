@@ -3,7 +3,16 @@ guid: 4aa626dd0cfd0974cbe461fbdebf137d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - targetPoint: {instanceID: 0}
+  - controller: {instanceID: 0}
+  - groundCheck: {instanceID: 0}
+  - modelTransform: {instanceID: 0}
+  - animator: {instanceID: 0}
+  - player: {instanceID: 0}
+  - healthManager: {instanceID: 0}
+  - cameraHolder: {instanceID: 0}
+  - coinPrefab: {fileID: 1460639157091036084, guid: d4dbe66725d9d264581b5f146d040c61, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

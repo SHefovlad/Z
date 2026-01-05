@@ -95,7 +95,9 @@ public class PowersnakeController : Enemy
     }
     public override void OnDied()
     {
+        if (!odi) { onDeath?.Invoke(); odi = true; }
         animator.enabled = false;
+        controller.enabled = false;
         foreach (var r in rigidbodies) { r.useGravity = true; r.interpolation = RigidbodyInterpolation.Interpolate; }
         foreach (var c in colliders) { c.enabled = true; }
         deadTimer += Time.deltaTime;
@@ -109,6 +111,7 @@ public class PowersnakeController : Enemy
                 vbSwit = true;
                 foreach (Outline o in outlines)
                 {
+                    onVoxelling?.Invoke();
                     VoxelBreaker vb = o.gameObject.AddComponent<VoxelBreaker>();
                     vb.cellSize = 0.1f;
                     vb.BreakIntoCubes();

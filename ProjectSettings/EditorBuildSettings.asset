@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/YaGameLobby.unity
+    guid: 9574971fad5a116469fac4721141a163
+  - enabled: 1
+    path: Assets/Scenes/Colosseum.unity
+    guid: 00b56d70d35575e41836af189ac8998a
   m_configObjects: {}

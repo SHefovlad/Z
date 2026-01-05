@@ -52,6 +52,10 @@ public class PlayerController : MonoBehaviour
 
     public float stun;
 
+    float hitX = 0;
+    float hitZ = 0;
+    public bool moving = false;
+
     Hat _currentHat = null;
     public Hat CurrentHat
     {
@@ -107,10 +111,15 @@ public class PlayerController : MonoBehaviour
             {
                 x = Input.GetAxis("Horizontal");
                 z = Input.GetAxis("Vertical");
+
+                moving = Mathf.Abs(x) + Mathf.Abs(z) >= 0.05f;
+
+                hitX = x;
+                hitZ = z;
             }
             else
             {
-                x = 0; z = 0;
+                x = hitX; z = hitZ;
             }
 
             Vector3 move = transform.right * x + transform.forward * z;
@@ -130,7 +139,8 @@ public class PlayerController : MonoBehaviour
             {
                 if (isGrounded)
                 {
-                    controller.Move(move * speed * Time.deltaTime);
+                    float attackSpeed = attackController.isHitting ? 0.3f : 1;
+                    controller.Move(move * speed * attackSpeed * Time.deltaTime);
 
                     animator.SetBool("isWalking", Mathf.Abs(move.x) + Mathf.Abs(move.z) >= 0.05f);
 
@@ -138,7 +148,8 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (treeTimer <= 0.5f)
                 {
-                    controller.Move(move * speed * Time.deltaTime);
+                    float attackSpeed = attackController.isHitting ? 0.3f : 1;
+                    controller.Move(move * speed * attackSpeed * Time.deltaTime);
 
                     animator.SetBool("isWalking", Mathf.Abs(move.x) + Mathf.Abs(move.z) >= 0.05f);
 

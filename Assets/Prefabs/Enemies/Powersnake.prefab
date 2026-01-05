@@ -704,6 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f05d35877a635446a4bff9d210e8a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 3
   targetPoint: {fileID: 0}
   speed: 1.5
   nowSpeed: 0
@@ -734,6 +735,11 @@ MonoBehaviour:
   - {fileID: 916528309486873569}
   - {fileID: 3074402256527808215}
   vbSwit: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  odi: 0
+  coinPrefab: {fileID: 1460639157091036084, guid: d4dbe66725d9d264581b5f146d040c61, type: 3}
   playerTimer: 0
   cooldown: 2
   playerLayer:
@@ -756,6 +762,9 @@ MonoBehaviour:
   - {fileID: 7761700780472716888}
   - {fileID: 7546396430768673671}
   - {fileID: 4155152065890431045}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &6533248284349955513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,6 +777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d7fdac41f4efc4a8531f521b4ff1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageJump: 1
   HEALTH: 100
   MAXHEALTH: 100
   healthSlider: {fileID: 1588638326703332097}

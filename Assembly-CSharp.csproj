@@ -64,6 +64,9 @@
     <Compile Include="Assets\Scripts\Enemy\HammurController.cs" />
     <Compile Include="Assets\Scripts\Player\CameraShake.cs" />
     <Compile Include="Assets\Scripts\ExplosionEffect.cs" />
+    <Compile Include="Assets\Scripts\Coins\Coin.cs" />
+    <Compile Include="Assets\Scripts\Coins\CoinsManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\YaLobbyManager.cs" />
     <Compile Include="Assets\Scripts\Interactable\Interactable.cs" />
     <Compile Include="Assets\Scripts\CampfireEffect.cs" />
     <Compile Include="Assets\Scripts\Scriptable\Hats.cs" />
@@ -89,7 +92,9 @@
     <Compile Include="Assets\Scripts\Enemy\PiramidController.cs" />
     <Compile Include="Assets\Scripts\Terrain\GrassSpawner.cs" />
     <Compile Include="Assets\Scripts\Terrain\GrassManager.cs" />
+    <Compile Include="Assets\Scripts\Coins\IngameCoinsManager.cs" />
     <Compile Include="Assets\Scripts\Scriptable\Hat.cs" />
+    <Compile Include="Assets\Scripts\Managers\ColosseumManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealthManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +124,7 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Shaders\OutlineShader.shader" />
+    <None Include="Assets\Shaders\WorldSpaceClip.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>

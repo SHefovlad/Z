@@ -80,7 +80,9 @@ public class HammurController : Enemy
     }
     public override void OnDied()
     {
+        if (!odi) { onDeath?.Invoke(); odi = true; }
         animator.SetBool("isDead", true);
+        controller.enabled = false;
         deadTimer += Time.deltaTime;
         if (targetPoint != null) Destroy(targetPoint.gameObject);
         if (deadTimer >= deadTime)
@@ -89,6 +91,7 @@ public class HammurController : Enemy
             {
                 healthManager.healthGO.SetActive(false);
                 vbSwit = true;
+                onVoxelling?.Invoke();
                 foreach (Outline o in outlines)
                 {
                     VoxelBreaker vb = o.gameObject.AddComponent<VoxelBreaker>();

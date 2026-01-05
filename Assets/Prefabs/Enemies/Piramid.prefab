@@ -298,13 +298,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.52
+  m_Height: 1
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.15, z: 0}
+  m_Center: {x: 0, y: -0.4, z: 0}
 --- !u!114 &8928845257086479268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022dc48294bf47449bba1d1dc25762b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 0
   targetPoint: {fileID: 0}
   speed: 3
   nowSpeed: 0
@@ -344,6 +345,11 @@ MonoBehaviour:
   - {fileID: 8896218408604354542}
   - {fileID: 1289111723880445572}
   vbSwit: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  odi: 0
+  coinPrefab: {fileID: 1460639157091036084, guid: d4dbe66725d9d264581b5f146d040c61, type: 3}
   checkInterval: 3
   animationChance: 0.3
   plTarget: {fileID: 799612004432287973, guid: 53b43d974473b8545b25c0fa240401f0, type: 3}
@@ -359,6 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d7fdac41f4efc4a8531f521b4ff1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageJump: 1
   HEALTH: 100
   MAXHEALTH: 100
   healthSlider: {fileID: 7663131534837186836}

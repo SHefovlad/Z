@@ -17,6 +17,7 @@ public class CameraShake : MonoBehaviour
     {
         if (shake > 0)
         {
+            shake = Mathf.Clamp(shake, 0, 3f);
             // Ограничиваем амплитуду тряски по shake и maxShakeMagnitude
             float magnitude = Mathf.Min(shake * 0.1f, maxShakeMagnitude);
 
